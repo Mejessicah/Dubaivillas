@@ -1,0 +1,28 @@
+---
+import '@fontsource/playfair-display';
+import '@fontsource/raleway';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Dubai Luxury Villas - Exclusive Properties in Dubai" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body class="font-raleway bg-luxury-light">
+		<Header />
+		<slot />
+		<Footer />
+	</body>
+</html>

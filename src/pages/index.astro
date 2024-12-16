@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PropertyCard from '../components/PropertyCard.astro';
+
+const featuredProperties = [
+  {
+    title: "Palm Jumeirah Villa",
+    price: "AED 25,000,000",
+    location: "Palm Jumeirah",
+    bedrooms: 6,
+    bathrooms: 7,
+    area: "10,000 sq ft",
+    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&auto=format"
+  },
+  {
+    title: "Emirates Hills Mansion",
+    price: "AED 40,000,000",
+    location: "Emirates Hills",
+    bedrooms: 8,
+    bathrooms: 9,
+    area: "15,000 sq ft",
+    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&auto=format"
+  },
+  {
+    title: "Dubai Hills Estate",
+    price: "AED 18,000,000",
+    location: "Dubai Hills",
+    bedrooms: 5,
+    bathrooms: 6,
+    area: "8,000 sq ft",
+    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&auto=format"
+  }
+];
+---
+
+<Layout title="Dubai Luxury Villas - Exclusive Properties in Dubai">
+  <main>
+    <!-- Hero Section -->
+    <section class="relative h-screen">
+      <div class="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200&auto=format" 
+          alt="Luxury Dubai Villa"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+      <div class="relative h-full flex items-center justify-center text-center text-white">
+        <div class="max-w-4xl px-4">
+          <h1 class="font-playfair text-5xl md:text-7xl mb-6">
+            Discover Luxury Living in Dubai
+          </h1>
+          <p class="text-xl md:text-2xl mb-8">
+            Exclusive properties in the most prestigious locations
+          </p>
+          <a 
+            href="/properties" 
+            class="inline-block bg-luxury-gold px-8 py-3 text-lg rounded hover:bg-opacity-90 transition-colors"
+          >
+            View Properties
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="py-20 px-4">
+      <div class="container mx-auto">
+        <h2 class="font-playfair text-4xl text-center mb-12">Featured Properties</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredProperties.map(property => (
+            <PropertyCard {...property} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="bg-luxury-dark text-white py-20 px-4">
+      <div class="container mx-auto">
+        <h2 class="font-playfair text-4xl text-center mb-12">Why Choose Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <h3 class="font-playfair text-2xl mb-4">Exclusive Portfolio</h3>
+            <p class="text-gray-400">Access to Dubai's most prestigious properties</p>
+          </div>
+          <div>
+            <h3 class="font-playfair text-2xl mb-4">Expert Guidance</h3>
+            <p class="text-gray-400">Professional team with deep market knowledge</p>
+          </div>
+          <div>
+            <h3 class="font-playfair text-2xl mb-4">Personalized Service</h3>
+            <p class="text-gray-400">Tailored approach to meet your specific needs</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
